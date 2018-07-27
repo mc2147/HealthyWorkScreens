@@ -118,7 +118,7 @@ class ConfirmEmail extends React.Component {
     return {
         headerBackImage: require('./assets/back-icon.svg'),
         headerTitle:'Sign In',
-        headerLeft:(<Text style={styles.headerLeft}><-</Text>)
+        headerLeft:(<Text style={styles.headerLeft}>X</Text>)
       };
   };
   render() {
