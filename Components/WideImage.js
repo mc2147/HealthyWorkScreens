@@ -14,21 +14,23 @@ import { DefaultTheme, Headline, Paragraph, TextInput,
 import { createStackNavigator, DrawerActions } from 'react-navigation';
 import { Constants } from 'expo';
 import Slideshow from 'react-native-slideshow';
-import { 
-  SendEmail, 
-  Walkthrough, 
-  ConfirmEmail,
-  NoAccount,
-  CreateProfile,
-  EnableNotifications 
-} from './Screens';
-import AppNavigator from './Navigation';
-// import *  as AppNavigator from './Navigation';
-// import { AppNavigator } from './Navigation';
-export default class App extends React.Component {
-  render() {
-      return (
-          <AppNavigator/>
-      );
-  }
-}
+
+// Props: image URL
+export default class WideImage extends React.Component {
+    render() {
+        return(
+            <Image 
+              style={[styles.fullWidthImage, this.props.style]} 
+              source={{uri:this.props.URI}}
+            />
+        )
+    }
+}  
+
+const styles = StyleSheet.create({
+  fullWidthImage: {
+    width: '100%', 
+    alignItems:'center', 
+    justifyContent: 'center'
+  },
+});

@@ -21,14 +21,30 @@ import {
   NoAccount,
   CreateProfile,
   EnableNotifications 
-} from './Screens';
-import AppNavigator from './Navigation';
-// import *  as AppNavigator from './Navigation';
-// import { AppNavigator } from './Navigation';
-export default class App extends React.Component {
-  render() {
-      return (
-          <AppNavigator/>
-      );
+} from '../Screens';
+
+export default createStackNavigator(
+  {
+    ConfirmEmail: {
+      screen: ConfirmEmail,
+    },
+    Walkthrough: {
+      screen: Walkthrough,
+    }, 
+    SendEmail: {
+      screen: SendEmail,  
+    }, 
+    NoAccount: {
+      screen: NoAccount,
+    },
+    CreateProfile: {
+      screen: CreateProfile,
+    }, 
+    EnableNotifications: {
+      screen:EnableNotifications,
+    },
+  },
+  {
+    initialRouteName:'SendEmail'
   }
-}
+);

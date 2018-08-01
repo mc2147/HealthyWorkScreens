@@ -14,21 +14,28 @@ import { DefaultTheme, Headline, Paragraph, TextInput,
 import { createStackNavigator, DrawerActions } from 'react-navigation';
 import { Constants } from 'expo';
 import Slideshow from 'react-native-slideshow';
-import { 
-  SendEmail, 
-  Walkthrough, 
-  ConfirmEmail,
-  NoAccount,
-  CreateProfile,
-  EnableNotifications 
-} from './Screens';
-import AppNavigator from './Navigation';
-// import *  as AppNavigator from './Navigation';
-// import { AppNavigator } from './Navigation';
-export default class App extends React.Component {
-  render() {
-      return (
-          <AppNavigator/>
-      );
-  }
-}
+
+// Props: width, color, inner text, function
+export default class RectangleButton extends React.Component {
+    render() {
+        return(
+            <TouchableNativeFeedback
+              onPress={() => this.props.buttonFunction()}
+            >
+            <View style={styles.buttonView}>
+              <Text style={{color: 'white'}}>{this.props.text}</Text> 
+            </View> 
+          </TouchableNativeFeedback>      
+        )
+    }
+}  
+
+const styles = StyleSheet.create({
+buttonView: {
+    width: '100%', 
+    height: 80, 
+    backgroundColor: '#5DBC88', 
+    alignItems:'center', 
+    justifyContent: 'center'
+},
+});
