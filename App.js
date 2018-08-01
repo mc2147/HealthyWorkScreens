@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, ScrollView, Image, StatusBar, FlatList, Touchab
   Platform } from 'react-native';
 import { DefaultTheme, Headline, Paragraph, TextInput,
   Appbar, AppbarAction, AppbarBackAction, AppbarContent, AppbarHeader, 
+  Card, CardContent,
   // Button,
   ListAccordion, Divider,
   ListSection, withTheme,
@@ -125,20 +126,16 @@ class ConfirmEmail extends React.Component {
     return (
       <PaperProvider theme={theme} style={styles.container}>  
       <View style={styles.container}>
-        <Image source={require('./assets/Email-Icon.png')} />
+        <Image style={styles.fullWidthImage} source={require('./assets/Email-Icon.png')} />
         <Headline style={styles.title}>
-        We've sent you an email!
+        We've sent you an email! 
         </Headline>    
         <Paragraph>
         This email contains a unique link that will sign you in. 
         Open your email client below and tap the link to return to the app.</Paragraph>
-        <TextInput
-        style={styles.textInput} 
-        placeholder='Email Address'
-        />        
-      </View> 
+      </View>  
       <TouchableNativeFeedback
-        onPress={() => this.props.navigation.navigate('Home', {})}
+        onPress={() => this.props.navigation.navigate('NoAccount', {})}
       >
       <View style={styles.buttonView}>
         <Text style={{color: 'white'}}>Open Email</Text> 
@@ -148,8 +145,129 @@ class ConfirmEmail extends React.Component {
     );
   }
 }
+
+class NoAccount extends React.Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+        header: null,
+      };
+  };
+  render() {
+    return (
+      <PaperProvider theme={theme} style={styles.container}>  
+      <View style={styles.centerContainer}>
+        <Image style={[styles.fullWidthImage, {marginTop:Constants.statusBarHeight}]} source={require('./assets/NoAccountImage.png')} />
+        <Headline style={[styles.title, {marginTop: 0}]}> 
+        No Account Found 
+        </Headline> 
+        <Paragraph>
+        Unfortunately, we couldn't find an account for either you or your employer 
+        in our system. If you think this is in error, please contact your HR department 
+        or visit our support site below.</Paragraph>
+        <Paragraph style={[styles.centerText, {color:'#5DBC88'}]}>Sign In With A Different Email</Paragraph>
+        <TouchableNativeFeedback
+        onPress={() => this.props.navigation.navigate('CreateProfile', {})} 
+        > 
+          <View style={styles.roundButtonView}>   
+            <Text style={{color: 'white'}}>Visit Healthyworks Support</Text> 
+          </View>  
+        </TouchableNativeFeedback>        
+      </View>        
+      </PaperProvider>
+    );
+  }
+}
+
+class CreateProfile extends React.Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+        headerBackImage: require('./assets/back-icon.svg'),
+        headerTitle:'Create a profile', 
+        headerLeft:(<Text style={styles.headerLeft}>X</Text>)
+      };
+  }; 
+  componentDidMount() {
+    // StatusBar.setBarStyle('light-content');
+  }
+  render() {
+    return (
+      <PaperProvider theme={theme} style={styles.container}>  
+      <View style={styles.container}>
+        <Headline style={styles.title}>
+        Welcome!
+        </Headline>    
+        <Paragraph>Since this is your first time, we just need some basic information from you.</Paragraph>
+        <TextInput
+        label='Full Name'
+        // autoFocus={true}
+        style={[styles.textInput, {marginTop:0, marginBottom:0}]} 
+        />        
+        <TextInput
+        style={[styles.textInput, {marginTop:0, marginBottom:0}]} 
+        // autoFocus={true}
+        placeholder='Month Day Year'
+        label='Birthdate'
+        />        
+        <TextInput
+        style={[styles.textInput, {marginTop:0, marginBottom:0}]} 
+        // autoFocus={true}
+        placeholder='Male'
+        label='Gender'
+        />        
+      </View> 
+      <TouchableNativeFeedback
+        onPress={() => this.props.navigation.navigate('EnableNotifications', {})}
+      >
+      <View style={styles.buttonView}>
+        <Text style={{color: 'white'}}>Continue</Text> 
+      </View> 
+    </TouchableNativeFeedback>      
+      </PaperProvider>
+    );
+  }
+}
+
+class EnableNotifications extends React.Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+        header:null,
+        // headerBackImage: require('./assets/back-icon.svg'),
+        // headerTitle:'', 
+        // headerLeft:(<Text style={styles.headerLeft}></Text>)
+      };
+  }; 
+  componentDidMount() {
+    // StatusBar.setBarStyle('light-content');
+  }
+  render() {
+    return (
+      <PaperProvider theme={theme} style={[styles.container, {backgroundColor: '#5DBC88'}]}>  
+      <View style={[styles.centerContainer, {backgroundColor: '#5DBC88'}]}>
+        <Headline style={[styles.title, {color:'white'}]}>
+        Enable Notifications
+        </Headline>    
+        <Paragraph style={{color:'white', textAlign:'center'}}>So we can send you notifications and alerts related to your medical conditions.</Paragraph>
+        <Image style={[styles.fullWidthImage, {marginTop:30}]} source={require('./assets/EnableNotificationsImage.png')} />
+      </View> 
+      <TouchableNativeFeedback
+        onPress={() => this.props.navigation.navigate('Home', {})}
+      >
+      <View style={styles.buttonView}>
+        <Text style={{color: 'white'}}>Skip</Text> 
+      </View> 
+    </TouchableNativeFeedback>      
+      </PaperProvider>
+    );
+  }
+}
+
  
 const styles = StyleSheet.create({
+  fullWidthImage: {
+    width: '100%', 
+    alignItems:'center', 
+    justifyContent: 'center'
+  },
   buttonView: {
     width: '100%', 
     height: 80, 
@@ -237,6 +355,12 @@ const styles = StyleSheet.create({
 
 export default createStackNavigator(
   {
+    EnableNotifications: {
+      screen:EnableNotifications,
+    },
+    NoAccount: {
+      screen: NoAccount,
+    },
     ConfirmEmail: {
       screen: ConfirmEmail,
     },
@@ -246,6 +370,9 @@ export default createStackNavigator(
     Home: {
       screen: Home,
     },
+    CreateProfile: {
+      screen: CreateProfile,
+    }, 
   },
   {
     initialRouteName:'Home'
