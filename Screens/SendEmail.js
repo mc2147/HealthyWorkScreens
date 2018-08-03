@@ -1,33 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Image, StatusBar, FlatList, TouchableOpacity, TouchableNativeFeedback,
-  Button,
-  Platform } from 'react-native';
-import { DefaultTheme, Headline, Paragraph, TextInput,
-  Appbar, AppbarAction, AppbarBackAction, AppbarContent, AppbarHeader, 
-  Card, CardContent,
-  // Button,
-  ListAccordion, Divider,
-  ListSection, withTheme,
-  Toolbar, ToolbarBackAction, ToolbarContent, ToolbarAction, 
-  FAB, DrawerSection, Colors,
-  Provider as PaperProvider } from 'react-native-paper';
-import { createStackNavigator, DrawerActions } from 'react-navigation';
-import { Constants } from 'expo';
+import { StyleSheet, View } from 'react-native';
+import { Headline, Paragraph, TextInput } from 'react-native-paper';
 import { RectangleButton } from '../Components';
-import Slideshow from 'react-native-slideshow';
 
   
 export default class SendEmail extends React.Component {
-    static navigationOptions = ({ navigation }) => {
-      return {
-          headerBackImage: require('../assets/back-icon.svg'),
-          headerTitle:'Sign In',
-          headerLeft:(<Text style={styles.headerLeft}>X</Text>) 
-        }; 
-    }; 
+    static navigationOptions = {
+      title:'Sign In',
+    };
+
     render() { 
       return (
-        <PaperProvider style={styles.container}>  
+        <View style={styles.wrapper}>  
         <View style={styles.container}> 
           <Headline style={styles.title}>
           What's your work email?
@@ -39,34 +23,34 @@ export default class SendEmail extends React.Component {
           />        
         </View>     
         <RectangleButton
-            text='Next (component)'
+            text='Next'
             buttonFunction={() => this.props.navigation.navigate('Walkthrough', {})}
         />
-        </PaperProvider>
+        </View>
       );
     }
   }
 
 const styles = StyleSheet.create({
+    wrapper: {
+      flex: 1,
+    },  
     textInput: {
       width:'100%',
-      marginTop:20, 
-      marginBottom:20 
+      marginVertical:20,
     },
     title: {
       textAlign:'left',
       fontSize: 18,
       fontWeight:'bold',
-      marginTop:30, 
-      marginBottom:30 
+      marginVertical:20,
     }, 
     container: {
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'flex-start',
       justifyContent: 'flex-start',
-      paddingLeft:20,
-      paddingRight:20,
+      paddingHorizontal:20,
     },
     headerLeft: {
       marginLeft: 10,

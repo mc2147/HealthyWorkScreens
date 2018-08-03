@@ -1,32 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Image, StatusBar, FlatList, TouchableOpacity, TouchableNativeFeedback,
-  Button,
-  Platform } from 'react-native';
-import { DefaultTheme, Headline, Paragraph, TextInput,
-  Appbar, AppbarAction, AppbarBackAction, AppbarContent, AppbarHeader, 
-  Card, CardContent,
-  // Button,
-  ListAccordion, Divider,
-  ListSection, withTheme,
-  Toolbar, ToolbarBackAction, ToolbarContent, ToolbarAction, 
-  FAB, DrawerSection, Colors,
-  Provider as PaperProvider } from 'react-native-paper';
-import { createStackNavigator, DrawerActions } from 'react-navigation';
-import { Constants } from 'expo';
-import { RectangleButton, RoundButton, WideImage } from '../Components';
-import Slideshow from 'react-native-slideshow';
+import { StyleSheet } from 'react-native';
+import { Headline, Paragraph, TextInput } from 'react-native-paper';
+import { RectangleButton } from '../Components';
 
 export default class CreateProfile extends React.Component {
-    static navigationOptions = ({ navigation }) => {
-      return {
-          headerBackImage: require('../assets/back-icon.svg'),
-          headerTitle:'Create a profile', 
-          headerLeft:(<Text style={styles.headerLeft}>X</Text>)
-        };
-    }; 
+    
+    static navigationOptions = {
+      title:'Create a Profile',
+    };
+
     render() {
       return (
-        <PaperProvider style={styles.container}>  
+        <View style={styles.wrapper}>
         <View style={styles.container}>
           <Headline style={styles.title}>
           Welcome!
@@ -34,18 +19,15 @@ export default class CreateProfile extends React.Component {
           <Paragraph>Since this is your first time, we just need some basic information from you.</Paragraph>
           <TextInput
           label='Full Name'
-          // autoFocus={true}
           style={[styles.textInput, {marginTop:0, marginBottom:0}]} 
           />        
           <TextInput
           style={[styles.textInput, {marginTop:0, marginBottom:0}]} 
-          // autoFocus={true}
           placeholder='Month Day Year'
           label='Birthdate'
           />        
           <TextInput
           style={[styles.textInput, {marginTop:0, marginBottom:0}]} 
-          // autoFocus={true}
           placeholder='Male'
           label='Gender'
           />        
@@ -54,13 +36,16 @@ export default class CreateProfile extends React.Component {
             buttonFunction={() => this.props.navigation.navigate('EnableNotifications', {})}
             text='Continue'
         />
-        </PaperProvider>
+        </View>
       );
     }
   }
   
 
   const styles = StyleSheet.create({
+    wrapper: {
+      flex: 1,
+    },
     centerContainer: {
         flex: 1,
         backgroundColor: '#fff',

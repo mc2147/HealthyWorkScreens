@@ -1,31 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Image, StatusBar, FlatList, TouchableOpacity, TouchableNativeFeedback,
-  Button,
-  Platform } from 'react-native';
-import { DefaultTheme, Headline, Paragraph, TextInput,
-  Appbar, AppbarAction, AppbarBackAction, AppbarContent, AppbarHeader, 
-  Card, CardContent,
-  // Button,
-  ListAccordion, Divider,
-  ListSection, withTheme,
-  Toolbar, ToolbarBackAction, ToolbarContent, ToolbarAction, 
-  FAB, DrawerSection, Colors,
-  Provider as PaperProvider } from 'react-native-paper';
-import { createStackNavigator, DrawerActions } from 'react-navigation';
-import { Constants } from 'expo';
-import Slideshow from 'react-native-slideshow';
+import { StyleSheet, Text, View } from 'react-native';
+import { TouchableRipple } from 'react-native-paper';
 
-// Props: width, color, inner text, function
 export default class RectangleButton extends React.Component {
     render() {
         return(
-            <TouchableNativeFeedback
+            <TouchableRipple
               onPress={() => this.props.buttonFunction()}
+              style={styles.buttonView}
             >
             <View style={styles.buttonView}>
               <Text style={{color: 'white'}}>{this.props.text}</Text> 
             </View> 
-          </TouchableNativeFeedback>      
+          </TouchableRipple>      
         )
     }
 }  
