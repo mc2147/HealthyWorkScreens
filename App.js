@@ -4,10 +4,10 @@ import AppNavigator from './Navigation';
 
 export default class App extends React.Component {
   render() {
-      return (
-        <PaperProvider>
-          <AppNavigator/>
-        </PaperProvider>
-      );
+    return (
+      <PaperProvider>
+        <AppNavigator />
+      </PaperProvider>
+    );
   }
 }

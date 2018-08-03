@@ -4,25 +4,25 @@ import { TouchableRipple } from 'react-native-paper';
 
 export default class RectangleButton extends React.Component {
     render() {
-        return(
+        return (
             <TouchableRipple
-              onPress={() => this.props.buttonFunction()}
-              style={styles.buttonView}
+                onPress={this.props.buttonFunction}
+                style={styles.buttonView}
             >
-            <View style={styles.buttonView}>
-              <Text style={{color: 'white'}}>{this.props.text}</Text> 
-            </View> 
-          </TouchableRipple>      
+                <View style={styles.buttonView}>
+                    <Text style={{ color: 'white' }}>{this.props.text}</Text>
+                </View>
+            </TouchableRipple>
         )
     }
-}  
+}
 
 const styles = StyleSheet.create({
-buttonView: {
-    width: '100%', 
-    height: 80, 
-    backgroundColor: '#5DBC88', 
-    alignItems:'center', 
-    justifyContent: 'center'
-},
+    buttonView: {
+        width: '100%',
+        height: 80,
+        backgroundColor: '#5DBC88',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
 });
