@@ -33,7 +33,7 @@ class CreateProfile extends React.Component {
           />
         </View>
         <Button
-          color='white'
+          color={colors.background}
           raised
           style={[styles.fullWidthButton, { backgroundColor: colors.primary }]}
           onPress={() => this.props.navigation.navigate('EnableNotifications')}
@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
   fullWidthButton: {
     alignSelf: "stretch",
     paddingVertical: 20,
-    width: '100%',
   },
   wrapper: {
     flex: 1,

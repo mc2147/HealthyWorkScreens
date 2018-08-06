@@ -29,7 +29,7 @@ class ConfirmEmail extends React.Component {
           Open your email client below and tap the link to return to the app.</Paragraph>
         </View>
         <Button
-          color='white'
+          color={colors.background}
           raised
           style={[styles.fullWidthButton, { backgroundColor: colors.primary }]}
           onPress={() => this.props.navigation.navigate('NoAccount')}
@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
   fullWidthButton: {
     alignSelf: "stretch",
     paddingVertical: 20,
-    width: '100%',
   },
   centerContainer: {
     flex: 1,
