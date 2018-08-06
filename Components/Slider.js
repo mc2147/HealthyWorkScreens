@@ -101,6 +101,7 @@ export default class Slideshow extends Component {
     this.setState({ position: index });
     if (isUpdating) {
       this.props.onPositionChanged(index);
+      // this.props.onPositionChanged(index);
     }
   }
 
@@ -149,7 +150,7 @@ export default class Slideshow extends Component {
       } else if (position + change >= this.props.dataSource.length) {
         change = (this.props.dataSource.length) - (position + change);
       }
-      this._move(position + change);
+      // this._move(position + change);
       return true;
     };
 
