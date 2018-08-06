@@ -2,6 +2,9 @@
 # IDEs
 .vscode/
 
+# IDEs
+.idea/
+
 # expo
 .expo/
 
