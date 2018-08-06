@@ -1,18 +1,19 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Headline, Paragraph, TextInput } from 'react-native-paper';
+import { withTheme, Headline, Paragraph, TextInput } from 'react-native-paper';
 import { RectangleButton } from '../Components';
 
-export default class CreateProfile extends React.Component {
+class CreateProfile extends React.Component {
 
   static navigationOptions = {
     title: 'Create a Profile',
   };
 
   render() {
+    const { colors } = this.props.theme;
     return (
       <View style={styles.wrapper}>
-        <View style={styles.container}>
+        <View style={[styles.container, { backgroundColor: colors.background }]}>
           <Headline style={styles.title}>
             Welcome!
           </Headline>
@@ -41,16 +42,16 @@ export default class CreateProfile extends React.Component {
   }
 }
 
+export default withTheme(CreateProfile);
 
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
   },
-  centerContainer: {
+  container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
     paddingLeft: 20,
     paddingRight: 20,
   },
@@ -65,14 +66,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 30,
     marginBottom: 30
-  },
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    paddingLeft: 20,
-    paddingRight: 20,
   },
   headerLeft: {
     marginLeft: 10,

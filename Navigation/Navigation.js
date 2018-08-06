@@ -30,6 +30,6 @@ export default createStackNavigator(
     },
   },
   {
-    initialRouteName: 'ConfirmEmail'
+    initialRouteName: 'Walkthrough'
   }
 );

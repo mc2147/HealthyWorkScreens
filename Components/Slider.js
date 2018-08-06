@@ -315,27 +315,6 @@ Slideshow.defaultProps = {
   arrowSize: 16,
 }
 
-// Slideshow.propTypes = {
-// 	dataSource: PropTypes.arrayOf(PropTypes.shape({
-// 	    title: PropTypes.string,
-// 	    caption: PropTypes.string,
-// 	    url: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-//     })).isRequired, 
-// 	indicatorSize: PropTypes.number,
-// 	indicatorColor: PropTypes.string,
-// 	indicatorSelectedColor: PropTypes.string,
-// 	height: PropTypes.number,
-// 	position: PropTypes.number,
-//   scrollEnabled: PropTypes.bool,
-//   containerStyle: PropTypes.object,
-//   overlay: PropTypes.bool,
-// 	arrowSize: PropTypes.number,
-//   arrowLeft: PropTypes.object,
-//   arrowRight: PropTypes.object,
-// 	onPress: PropTypes.func,
-// 	onPositionChanged: PropTypes.func,
-// };
-
 const setIndicatorSize = function (size) {
   return {
     width: size,

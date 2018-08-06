@@ -1,18 +1,19 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Headline, Paragraph, TextInput } from 'react-native-paper';
+import { withTheme, Headline, Paragraph, TextInput } from 'react-native-paper';
 import { RectangleButton } from '../Components';
 
 
-export default class SendEmail extends React.Component {
+class SendEmail extends React.Component {
   static navigationOptions = {
     title: 'Sign In',
   };
 
   render() {
+    const { colors } = this.props.theme;
     return (
       <View style={styles.wrapper}>
-        <View style={styles.container}>
+        <View style={[styles.container, { backgroundColor: colors.background }]}>
           <Headline style={styles.title}>
             What's your work email?
           </Headline>
@@ -24,12 +25,14 @@ export default class SendEmail extends React.Component {
         </View>
         <RectangleButton
           text='Next'
-          buttonFunction={() => this.props.navigation.navigate('Walkthrough', {})}
+          buttonFunction={() => this.props.navigation.navigate('ConfirmEmail', {})}
         />
       </View>
     );
   }
 }
+
+export default withTheme(SendEmail);
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -47,7 +50,6 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     paddingHorizontal: 20,

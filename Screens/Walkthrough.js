@@ -1,13 +1,12 @@
 import React from 'react';
 import {
     StyleSheet, View,
-    Platform
 } from 'react-native';
-import { Headline, Paragraph } from 'react-native-paper';
+import { Headline, Paragraph, withTheme } from 'react-native-paper';
 import { Constants } from 'expo';
 import { RoundButton, Slideshow } from '../Components';
 
-export default class Walkthrough extends React.Component {
+class Walkthrough extends React.Component {
     static navigationOptions = {
         header: null
     };
@@ -33,6 +32,7 @@ export default class Walkthrough extends React.Component {
     };
 
     render() {
+        const { colors } = this.props.theme;
         return (
             <View style={styles.wrapper}>
                 <Slideshow
@@ -42,13 +42,13 @@ export default class Walkthrough extends React.Component {
                     dataSource={this.state.data}
                     height={'60%'}
                     arrowSize={0} />
-                <View style={styles.centerContainer}>
+                <View style={[styles.centerContainer, { backgroundColor:colors.background }]}>
                     <Headline style={styles.largeTitle}>
                         Your Personalized Health Alert Program
-           </Headline>
+                   </Headline>
                     <Paragraph style={styles.centerText}>Notifications tailored to your personal health conditions and regiment.</Paragraph>
                     <RoundButton
-                        onPress={() => this.props.navigation.navigate('ConfirmEmail', {})}
+                        onPress={() => this.props.navigation.navigate('SendEmail', {})}
                         text='Get Started'
                     />
                 </View>
@@ -56,6 +56,8 @@ export default class Walkthrough extends React.Component {
         );
     }
 }
+
+export default withTheme(Walkthrough);
 
 const styles = StyleSheet.create({
     wrapper: {
@@ -73,7 +75,6 @@ const styles = StyleSheet.create({
     },
     centerContainer: {
         flex: 1,
-        backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
         paddingHorizontal: 20,
