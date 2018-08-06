@@ -12,7 +12,7 @@ class Walkthrough extends React.Component {
     };
 
     state = {
-        position: 1,
+        position: 2,
         interval: null,
         data: [
             {
@@ -40,7 +40,7 @@ class Walkthrough extends React.Component {
                     position={this.state.position}
                     onPositionChanged={position => this.setState({ position })}
                     dataSource={this.state.data}
-                    height={'60%'}
+                    height={350}
                     arrowSize={0} />
                 <View style={[styles.centerContainer, { backgroundColor: colors.background }]}>
                     <Headline style={styles.largeTitle}>
