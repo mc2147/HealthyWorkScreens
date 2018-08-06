@@ -199,7 +199,7 @@ export default class Slideshow extends Component {
               </View>
             );
             const imageComponent = (
-              <View key={index} style={{backgroundColor: "red"}}>
+              <View key={index}>
                 <Image
                   source={imageObject}
                   style={{ height, width, flex: 1, resizeMode: "cover"}} />
