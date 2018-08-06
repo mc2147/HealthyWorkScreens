@@ -1,21 +1,23 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { TouchableRipple } from 'react-native-paper';
+import { WithTheme, TouchableRipple } from 'react-native-paper';
 
-export default class RoundedButton extends React.Component {
-    render() {
-        return (
-            <TouchableRipple
-                onPress={() => this.props.onPress()}
-                style={styles.roundButtonView}
-            >
-                <View style={styles.roundButtonView}>
-                    <Text style={{ color: 'white', textAlign: 'center' }}>{this.props.text}</Text>
-                </View>
-            </TouchableRipple>
-        )
-    }
+export default function RoundedButton (props) {
+    // const { colors } = props.theme;
+    return (
+        <TouchableRipple
+            onPress={props.onPress}
+            style={styles.roundButtonView}
+        >
+            <View style={styles.roundButtonView}>
+                <Text style={{ color: 'white', textAlign: 'center' }}>{props.text}</Text>
+            </View>
+        </TouchableRipple>
+    )
 }
+
+// export default WithTheme(RoundedButton);
+
 
 const styles = StyleSheet.create({
     roundButtonView: {

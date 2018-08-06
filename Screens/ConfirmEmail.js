@@ -45,10 +45,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 20,
   },
-  textInput: {
-    width: '100%',
-    marginVertical: 20,
-  },
   title: {
     textAlign: 'left',
     fontSize: 18,
@@ -66,7 +62,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   fullWidthImage: {
-    width: '100%',
     alignItems: 'center',
     justifyContent: 'center'
   },

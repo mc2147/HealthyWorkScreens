@@ -61,35 +61,6 @@ const styles = StyleSheet.create({
     wrapper: {
         flex: 1,
     },
-    fullWidthImage: {
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    buttonView: {
-        width: '100%',
-        height: 80,
-        backgroundColor: '#5DBC88',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    roundButtonView: {
-        width: '100%',
-        height: 50,
-        backgroundColor: '#5DBC88',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 45,
-    },
-    fullWidthButton: {
-        backgroundColor: '#5DBC88',
-        width: '100%',
-        height: 50
-    },
-    textInput: {
-        width: '100%',
-        marginVertical: 20,
-    },
     centerText: {
         textAlign: 'center',
         fontSize: 10,
@@ -98,26 +69,7 @@ const styles = StyleSheet.create({
     largeTitle: {
         textAlign: 'center',
         fontSize: 25,
-        // fontWeight:'bold',
         marginVertical: 15,
-    },
-    title: {
-        textAlign: 'left',
-        fontSize: 18,
-        fontWeight: 'bold',
-        marginVertical: 30,
-    },
-    statusBar: {
-        backgroundColor: "#C2185B",
-        color: 'white',
-        height: Constants.statusBarHeight,
-    },
-    appbar: {
-        marginTop: Constants.statusBarHeight,
-        // height:80
-    },
-    appbarcontent: {
-        color: 'white'
     },
     centerContainer: {
         flex: 1,
@@ -126,22 +78,4 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingHorizontal: 20,
     },
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'flex-start',
-        justifyContent: 'flex-start',
-        paddingHorizontal: 20,
-    },
-    avatar: {
-        height: 40,
-        width: 40,
-    },
-    drawerContent: {
-        flex: 1,
-        paddingTop: Platform.OS === 'android' ? 25 : 22,
-    },
-    headerLeft: {
-        marginLeft: 10,
-    }
 });

@@ -19,7 +19,6 @@ export default class RectangleButton extends React.Component {
 
 const styles = StyleSheet.create({
     buttonView: {
-        width: '100%',
         height: 80,
         backgroundColor: '#5DBC88',
         alignItems: 'center',

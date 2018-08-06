@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Headline, Paragraph, TextInput } from 'react-native-paper';
 import { RectangleButton } from '../Components';
 
@@ -33,7 +33,7 @@ export default class CreateProfile extends React.Component {
           />
         </View>
         <RectangleButton
-          buttonFunction={() => this.props.navigation.navigate('EnableNotifications', {})}
+          buttonFunction={() => this.props.navigation.navigate('EnableNotifications')}
           text='Continue'
         />
       </View>
@@ -78,7 +78,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   fullWidthImage: {
-    width: '100%',
     alignItems: 'center',
     justifyContent: 'center'
   },

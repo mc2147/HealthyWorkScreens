@@ -14,7 +14,6 @@ export default class WideImage extends React.Component {
 
 const styles = StyleSheet.create({
   fullWidthImage: {
-    width: '100%',
     alignItems: 'center',
     justifyContent: 'center'
   },
