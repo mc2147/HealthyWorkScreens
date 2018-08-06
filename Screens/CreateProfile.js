@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { withTheme, Headline, Paragraph, TextInput } from 'react-native-paper';
-import { RectangleButton } from '../Components';
+import { StyleSheet, View, Text } from 'react-native';
+import { withTheme, Headline, Paragraph, TextInput, Button } from 'react-native-paper';
 
 class CreateProfile extends React.Component {
 
@@ -33,18 +32,25 @@ class CreateProfile extends React.Component {
             label='Gender'
           />
         </View>
-        <RectangleButton
-          buttonFunction={() => this.props.navigation.navigate('EnableNotifications')}
-          text='Continue'
-        />
+        <Button
+          color='white'
+          raised
+          style={[styles.fullWidthButton, { backgroundColor: colors.primary }]}
+          onPress={() => this.props.navigation.navigate('EnableNotifications')}
+        >
+          Continue
+        </Button>
       </View>
     );
   }
 }
 
-export default withTheme(CreateProfile);
-
 const styles = StyleSheet.create({
+  fullWidthButton: {
+    alignSelf: "stretch",
+    paddingVertical: 20,
+    width: '100%',
+  },
   wrapper: {
     flex: 1,
   },
@@ -80,3 +86,5 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 });
+
+export default withTheme(CreateProfile);

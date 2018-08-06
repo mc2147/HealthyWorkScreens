@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { withTheme, Headline, Paragraph, TextInput } from 'react-native-paper';
-import { RectangleButton } from '../Components';
+import { StyleSheet, View, Text } from 'react-native';
+import { withTheme, Headline, Paragraph, TextInput, Button } from 'react-native-paper';
 
 
 class SendEmail extends React.Component {
@@ -23,20 +22,27 @@ class SendEmail extends React.Component {
             placeholder='Email Address'
           />
         </View>
-        <RectangleButton
-          text='Next'
-          buttonFunction={() => this.props.navigation.navigate('ConfirmEmail', {})}
-        />
+        <Button
+          color='white'
+          raised
+          style={[styles.fullWidthButton, { backgroundColor: colors.primary }]}
+          onPress={() => this.props.navigation.navigate('ConfirmEmail')}
+        >
+          Next
+        </Button>
       </View>
     );
   }
 }
 
-export default withTheme(SendEmail);
-
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
+  },
+  fullWidthButton: {
+    alignSelf: "stretch",
+    paddingVertical: 20,
+    width: '100%',
   },
   textInput: {
     width: '100%',
@@ -58,3 +64,5 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   }
 });
+
+export default withTheme(SendEmail);

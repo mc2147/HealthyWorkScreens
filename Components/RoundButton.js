@@ -14,8 +14,6 @@ function RoundedButton(props) {
     )
 }
 
-export default withTheme(RoundedButton);
-
 const styles = StyleSheet.create({
     buttonText: {
         textAlign: 'center'
@@ -29,3 +27,5 @@ const styles = StyleSheet.create({
         borderRadius: 45,
     },
 });
+
+export default withTheme(RoundedButton);

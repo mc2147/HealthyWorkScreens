@@ -35,8 +35,6 @@ class NoAccount extends React.Component {
   }
 }
 
-export default withTheme(NoAccount);
-
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
@@ -63,3 +61,5 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 });
+
+export default withTheme(NoAccount);

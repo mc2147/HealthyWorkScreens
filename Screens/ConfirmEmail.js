@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, Image } from 'react-native';
-import { withTheme, Headline, Paragraph } from 'react-native-paper';
-import { RectangleButton, WideImage } from '../Components';
+import { StyleSheet, View, Image, Text } from 'react-native';
+import { withTheme, Headline, Paragraph, Button } from 'react-native-paper';
+import { WideImage } from '../Components';
 
 class ConfirmEmail extends React.Component {
 
@@ -28,20 +28,27 @@ class ConfirmEmail extends React.Component {
             This email contains a unique link that will sign you in.
           Open your email client below and tap the link to return to the app.</Paragraph>
         </View>
-        <RectangleButton
-          text='Open Email'
-          buttonFunction={() => this.props.navigation.navigate('NoAccount', {})}
-        />
+        <Button
+          color='white'
+          raised
+          style={[styles.fullWidthButton, { backgroundColor: colors.primary }]}
+          onPress={() => this.props.navigation.navigate('NoAccount')}
+        >
+          Open Email
+        </Button>
       </View>
     );
   }
 }
 
-export default withTheme(ConfirmEmail);
-
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
+  },
+  fullWidthButton: {
+    alignSelf: "stretch",
+    paddingVertical: 20,
+    width: '100%',
   },
   centerContainer: {
     flex: 1,
@@ -63,3 +70,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
 });
+
+export default withTheme(ConfirmEmail);

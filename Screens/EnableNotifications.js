@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Image } from 'react-native';
-import { withTheme, Headline, Paragraph } from 'react-native-paper';
-import { RectangleButton } from '../Components';
+import { StyleSheet, View, Image, Text } from 'react-native';
+import { withTheme, Headline, Paragraph, Button } from 'react-native-paper';
 
 class EnableNotifications extends React.Component {
   static navigationOptions = {
@@ -21,18 +20,27 @@ class EnableNotifications extends React.Component {
           </Paragraph>
           <Image style={[styles.fullWidthImage, { marginTop: 30 }]} source={require('../assets/EnableNotificationsImage.png')} />
         </View>
-        <RectangleButton
-          buttonFunction={() => this.props.navigation.navigate('Walkthrough', {})}
-          text='Skip'
-        />
+
+        <Button
+          color='white'
+          raised
+          style={[styles.fullWidthButton, { backgroundColor: colors.primary }]}
+          onPress={() => this.props.navigation.navigate('Walkthrough')}
+        >
+          Skip
+        </Button>
+
       </View>
     );
   }
 }
 
-export default withTheme(EnableNotifications);
-
 const styles = StyleSheet.create({
+  fullWidthButton: {
+    alignSelf: "stretch",
+    paddingVertical: 20,
+    width: '100%',
+  },
   wrapper: {
     flex: 1,
   },
@@ -61,3 +69,5 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 });
+
+export default withTheme(EnableNotifications);

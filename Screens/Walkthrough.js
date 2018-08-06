@@ -42,7 +42,7 @@ class Walkthrough extends React.Component {
                     dataSource={this.state.data}
                     height={'60%'}
                     arrowSize={0} />
-                <View style={[styles.centerContainer, { backgroundColor:colors.background }]}>
+                <View style={[styles.centerContainer, { backgroundColor: colors.background }]}>
                     <Headline style={styles.largeTitle}>
                         Your Personalized Health Alert Program
                    </Headline>
@@ -56,8 +56,6 @@ class Walkthrough extends React.Component {
         );
     }
 }
-
-export default withTheme(Walkthrough);
 
 const styles = StyleSheet.create({
     wrapper: {
@@ -80,3 +78,5 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
     },
 });
+
+export default withTheme(Walkthrough);
