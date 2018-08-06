@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Image } from "react-native";
-import { withTheme, Headline, Paragraph } from "react-native-paper";
+import { withTheme, Headline, Paragraph, Button } from "react-native-paper";
 import { RoundButton, WideImage } from "../Components";
 
 class NoAccount extends React.Component {
@@ -29,10 +29,11 @@ class NoAccount extends React.Component {
         <Paragraph style={[styles.centerText, { color: colors.primary }]}>
           Sign In With A Different Email
         </Paragraph>
-        <RoundButton
+        <Button
           onPress={() => this.props.navigation.navigate("CreateProfile", {})}
-          text="Visit Healthyworks Support"
-        />
+        >
+          Visit Healthyworks Support
+        </Button>
       </View>
     );
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import { Headline, Paragraph, withTheme } from "react-native-paper";
+import { Headline, Paragraph, withTheme, Button } from "react-native-paper";
 import { Constants } from "expo";
 import { RoundButton, Slideshow } from "../Components";
 
@@ -56,10 +56,19 @@ class Walkthrough extends React.Component {
             Notifications tailored to your personal health conditions and
             regiment.
           </Paragraph>
-          <RoundButton
+          <Button
             onPress={() => this.props.navigation.navigate("SendEmail", {})}
-            text="Get Started"
-          />
+            raised
+            primary
+            dark
+            style={{
+              alignSelf: "stretch",
+              paddingVertical: 4,
+              borderRadius: 24
+            }}
+          >
+            Get Started
+          </Button>
         </View>
       </View>
     );
