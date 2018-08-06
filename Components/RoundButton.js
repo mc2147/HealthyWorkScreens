@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     },
     roundButtonView: {
         width: '100%',
-        height: 50,
+        height: 48,
         textAlign: 'center',
         alignItems: 'center',
         justifyContent: 'center',

@@ -48,7 +48,7 @@ class CreateProfile extends React.Component {
 const styles = StyleSheet.create({
   fullWidthButton: {
     alignSelf: "stretch",
-    paddingVertical: 20,
+    paddingVertical: 24,
   },
   wrapper: {
     flex: 1,
@@ -57,32 +57,20 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 24,
+    paddingRight: 24,
   },
   textInput: {
     width: '100%',
-    marginTop: 20,
-    marginBottom: 20
+    marginTop: 24,
+    marginBottom: 24
   },
   title: {
     textAlign: 'left',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
-    marginTop: 30,
-    marginBottom: 30
-  },
-  headerLeft: {
-    marginLeft: 10,
-  },
-  fullWidthImage: {
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  centerText: {
-    textAlign: 'center',
-    fontSize: 10,
-    marginBottom: 10,
+    marginTop: 32,
+    marginBottom: 32
   },
 });
 

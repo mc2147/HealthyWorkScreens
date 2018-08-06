@@ -43,13 +43,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: 24,
   },
   title: {
     textAlign: 'left',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
-    marginVertical: 30,
+    marginVertical: 32,
   },
   fullWidthImage: {
     alignItems: 'center',
@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
   },
   centerText: {
     textAlign: 'center',
-    fontSize: 10,
-    marginBottom: 10,
+    fontSize: 12,
+    marginBottom: 12,
   },
 });
 

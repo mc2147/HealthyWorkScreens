@@ -41,26 +41,26 @@ const styles = StyleSheet.create({
   },
   fullWidthButton: {
     alignSelf: "stretch",
-    paddingVertical: 20,
+    paddingVertical: 24,
   },
   textInput: {
     alignSelf: "stretch",
-    marginVertical: 20,
+    marginVertical: 24,
   },
   title: {
     textAlign: 'left',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
-    marginVertical: 20,
+    marginVertical: 24,
   },
   container: {
     flex: 1,
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    paddingHorizontal: 20,
+    paddingHorizontal: 24,
   },
   headerLeft: {
-    marginLeft: 10,
+    marginLeft: 12,
   }
 });
 

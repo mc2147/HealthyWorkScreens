@@ -63,19 +63,19 @@ const styles = StyleSheet.create({
     },
     centerText: {
         textAlign: 'center',
-        fontSize: 10,
-        marginBottom: 10,
+        fontSize: 12,
+        marginBottom: 12,
     },
     largeTitle: {
         textAlign: 'center',
-        fontSize: 25,
-        marginVertical: 15,
+        fontSize: 24,
+        marginVertical: 16,
     },
     centerContainer: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingHorizontal: 20,
+        paddingHorizontal: 24,
     },
 });
 

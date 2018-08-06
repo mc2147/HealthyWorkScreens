@@ -38,7 +38,7 @@ class EnableNotifications extends React.Component {
 const styles = StyleSheet.create({
   fullWidthButton: {
     alignSelf: "stretch",
-    paddingVertical: 20,
+    paddingVertical: 24,
   },
   wrapper: {
     flex: 1,
@@ -47,25 +47,17 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: 24,
   },
   title: {
     textAlign: 'left',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
-    marginVertical: 20,
-  },
-  headerLeft: {
-    marginLeft: 10,
+    marginVertical: 24,
   },
   fullWidthImage: {
     alignItems: 'center',
     justifyContent: 'center'
-  },
-  centerText: {
-    textAlign: 'center',
-    fontSize: 10,
-    marginBottom: 10,
   },
 });
 
