@@ -80,8 +80,8 @@ const styles = StyleSheet.create({
     },
     roundButtonView: {
         alignSelf: "stretch",
-        marginVertical:10,
-        paddingVertical: 10,
+        marginVertical:12,
+        paddingVertical: 12,
         borderRadius: 48,
     },
     wrapper: {
