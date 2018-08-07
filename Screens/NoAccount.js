@@ -28,7 +28,6 @@ class NoAccount extends React.Component {
         <Paragraph style={[styles.centerText, { color: colors.primary }]}>
           Sign In With A Different Email
         </Paragraph>
-
         <Button
           raised
           dark
@@ -53,8 +52,8 @@ const styles = StyleSheet.create({
     marginVertical:12,
     paddingVertical: 12,
     borderRadius: 48,
-},
-wrapper: {
+  },
+  wrapper: {
     flex: 1
   },
   centerContainer: {

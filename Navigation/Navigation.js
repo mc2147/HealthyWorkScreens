@@ -1,4 +1,4 @@
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from "react-navigation";
 import {
   SendEmail,
   Walkthrough,
@@ -6,30 +6,31 @@ import {
   NoAccount,
   CreateProfile,
   EnableNotifications
-} from '../Screens';
+} from "../Screens";
 
 export default createStackNavigator(
   {
     ConfirmEmail: {
-      screen: ConfirmEmail,
+      screen: ConfirmEmail
     },
     Walkthrough: {
-      screen: Walkthrough,
+      screen: Walkthrough
+
     },
     SendEmail: {
-      screen: SendEmail,
+      screen: SendEmail
     },
     NoAccount: {
-      screen: NoAccount,
+      screen: NoAccount
     },
     CreateProfile: {
-      screen: CreateProfile,
+      screen: CreateProfile
     },
     EnableNotifications: {
-      screen: EnableNotifications,
-    },
+      screen: EnableNotifications
+    }
   },
   {
-    initialRouteName: 'Walkthrough'
+    initialRouteName: "Walkthrough"
   }
 );

@@ -85,8 +85,8 @@ const styles = StyleSheet.create({
         borderRadius: 48,
     },
     wrapper: {
-    flex: 1
-  },
+      flex: 1
+    },
   centerText: {
     textAlign: "center",
     fontSize: 12,
