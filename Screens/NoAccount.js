@@ -1,7 +1,6 @@
 import React from "react";
-import { StyleSheet, View, Image } from "react-native";
-import { withTheme, Headline, Paragraph } from "react-native-paper";
-import { RoundButton, WideImage } from "../Components";
+import { StyleSheet, View, Image, Text } from "react-native";
+import { withTheme, Headline, Paragraph, Button } from "react-native-paper";
 
 class NoAccount extends React.Component {
   static navigationOptions = {
@@ -29,16 +28,31 @@ class NoAccount extends React.Component {
         <Paragraph style={[styles.centerText, { color: colors.primary }]}>
           Sign In With A Different Email
         </Paragraph>
-        <RoundButton
-          onPress={() => this.props.navigation.navigate("CreateProfile", {})}
-          text="Visit Healthyworks Support"
-        />
+        <Button
+          raised
+          dark
+          primary
+          style={styles.roundButtonView}
+          onPress={() => this.props.navigation.navigate('CreateProfile')}
+        >
+          <Text uppercase={false} style={styles.buttonText}>Visit Healthyworks Support</Text>          
+        </Button>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  buttonText: {
+      textAlign: 'center',
+      fontWeight: '100'
+  },
+  roundButtonView: {
+    alignSelf: "stretch",
+    marginVertical:12,
+    paddingVertical: 12,
+    borderRadius: 48,
+  },
   wrapper: {
     flex: 1
   },

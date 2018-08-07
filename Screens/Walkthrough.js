@@ -1,8 +1,8 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import { Headline, Paragraph, withTheme } from "react-native-paper";
+import { StyleSheet, View, Text } from "react-native";
+import { Headline, Paragraph, withTheme, Button } from "react-native-paper";
 import { Constants } from "expo";
-import { RoundButton, Slideshow } from "../Components";
+import { Slideshow } from "../Components";
 
 class Walkthrough extends React.Component {
   static navigationOptions = {
@@ -56,10 +56,17 @@ class Walkthrough extends React.Component {
             Notifications tailored to your personal health conditions and
             regiment.
           </Paragraph>
-          <RoundButton
-            onPress={() => this.props.navigation.navigate("SendEmail", {})}
-            text="Get Started"
-          />
+        <Button
+            raised
+            dark
+            primary
+            style={styles.roundButtonView}
+            onPress={() => this.props.navigation.navigate('SendEmail')}
+            >
+            <Text uppercase={false} style={styles.buttonText}>
+                Get Started
+            </Text>          
+        </Button>
         </View>
       </View>
     );
@@ -67,9 +74,19 @@ class Walkthrough extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1
-  },
+    buttonText: {
+        textAlign: 'center',
+        fontWeight: '100'
+    },
+    roundButtonView: {
+        alignSelf: "stretch",
+        marginVertical:12,
+        paddingVertical: 12,
+        borderRadius: 48,
+    },
+    wrapper: {
+      flex: 1
+    },
   centerText: {
     textAlign: "center",
     fontSize: 12,

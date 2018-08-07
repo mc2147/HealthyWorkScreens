@@ -22,9 +22,10 @@ class EnableNotifications extends React.Component {
         </View>
 
         <Button
-          color={colors.background}
           raised
-          style={[styles.fullWidthButton, { backgroundColor: colors.primary }]}
+          dark
+          primary
+          style={styles.fullWidthButton}
           onPress={() => this.props.navigation.navigate('Walkthrough')}
         >
           Skip
@@ -39,6 +40,7 @@ const styles = StyleSheet.create({
   fullWidthButton: {
     alignSelf: "stretch",
     paddingVertical: 24,
+    margin: 0
   },
   wrapper: {
     flex: 1,
