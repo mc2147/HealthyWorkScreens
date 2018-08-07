@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Image, Text } from "react-native";
 import { withTheme, Headline, Paragraph, Button } from "react-native-paper";
-import { WideImage } from "../Components";
 
 class ConfirmEmail extends React.Component {
   static navigationOptions = {
