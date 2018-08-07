@@ -23,9 +23,10 @@ class SendEmail extends React.Component {
           />
         </View>
         <Button
-          color={colors.background}
           raised
-          style={[styles.fullWidthButton, { backgroundColor: colors.primary }]}
+          dark
+          primary
+          style={styles.fullWidthButton}
           onPress={() => this.props.navigation.navigate('ConfirmEmail')}
         >
           Next
@@ -42,6 +43,7 @@ const styles = StyleSheet.create({
   fullWidthButton: {
     alignSelf: "stretch",
     paddingVertical: 24,
+    margin: 0
   },
   textInput: {
     alignSelf: "stretch",
